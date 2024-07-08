@@ -26,7 +26,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install wheel
         pip install -r requirements.txt
-        python setup.py bdist_wheel --plat manylinux1
+        python setup.py bdist_wheel --plat manylinux2014
 
     - name: Install dependencies and build wheels (Windows)
       if: matrix.os == 'windows-latest'
