@@ -18,25 +18,24 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Install dependencies (Linux)
-      if: runner.os == 'Linux'
+    - name: Install dependencies and build wheels (Linux)
+      if: matrix.os == 'ubuntu-latest'
       run: |
         sudo apt-get update
         sudo apt-get install -y gcc g++  # Install GCC and G++
         python -m pip install --upgrade pip
         pip install wheel
         pip install -r requirements.txt
+        python setup.py bdist_wheel
 
-    - name: Install dependencies (Windows)
-      if: runner.os == 'Windows'
+    - name: Install dependencies and build wheels (Windows)
+      if: matrix.os == 'windows-latest'
       run: |
         choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended --quiet --norestart"  # Install Visual C++ Build Tools
         python -m pip install --upgrade pip
         pip install wheel
         pip install -r requirements.txt
-
-    - name: Build wheels
-      run: python setup.py bdist_wheel
+        python setup.py bdist_wheel
 
     - name: Upload wheels
       uses: actions/upload-artifact@v2
