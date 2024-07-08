@@ -49,7 +49,7 @@ setup(
     version='0.0.2',
     author='BAAR Team Bravo 6',
     author_email='ashif.ali@baar.ai',
-    url='https://github.com/mdAshif1998/lowLevelDataTransformation',
+    url='https://github.com/mdAshif1998/lowLevelDataTransformation/tree/master',
     description='The package will change the world of data transformation by utilizing/modifying the low-level stuff.',
     long_description=long_description,
     long_description_content_type='text/markdown',
