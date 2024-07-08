@@ -55,12 +55,14 @@ setup(
     long_description_content_type='text/markdown',
     packages=find_packages(),
     ext_modules=cythonize(extensions),
+    keywords=['python', 'data', 'transformation', 'cython'],
     install_requires=[
         'Cython',
         'numpy',
         'pandas'
     ],
     classifiers=[
+        'Intended Audience :: Developers',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
@@ -70,6 +72,7 @@ setup(
         'Programming Language :: Python :: 3.12',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
+        'Topic :: Utilities'
     ],
     python_requires='>=3.7',
 )
