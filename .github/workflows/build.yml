@@ -1,0 +1,61 @@
+name: Build and Publish Wheels
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ['3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12']
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc g++  # Install GCC and G++
+        python -m pip install --upgrade pip
+        pip install wheel
+        pip install -r requirements.txt
+
+    - name: Install dependencies (Windows)
+      if: runner.os == 'Windows'
+      run: |
+        choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended --quiet --norestart"  # Install Visual C++ Build Tools
+        python -m pip install --upgrade pip
+        pip install wheel
+        pip install -r requirements.txt
+
+    - name: Build wheels
+      run: python setup.py bdist_wheel
+
+    - name: Upload wheels
+      uses: actions/upload-artifact@v2
+      with:
+        name: wheels
+        path: dist/*.whl
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download wheels
+      uses: actions/download-artifact@v2
+      with:
+        name: wheels
+        path: dist
+
+    - name: Publish to PyPI
+      uses: pypa/gh-action-pypi-publish@v1.4.2
+      with:
+        user: __token__
+        password: ${{ secrets.PYPI_TOKEN }}
