@@ -34,5 +34,5 @@ def string_to_df(str input_string):
           
         return pd.DataFrame(data)
     except Exception as conversion_exception:
-        print(str(conversion_exception), flush=True)
+        print(f"Conversion Exception: {str(conversion_exception)}", flush=True)
         return pd.DataFrame()

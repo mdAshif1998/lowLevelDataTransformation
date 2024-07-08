@@ -29,5 +29,5 @@ def df_to_string(dataframe):
         return output
     except Exception as conversion_exception:
         # Optionally, you can print or log the exception for debugging purposes
-        print(f"Conversion Exception: {conversion_exception}")
+        print(f"Conversion Exception: {conversion_exception}", flush=True)
         return ""

@@ -32,15 +32,22 @@ def df_to_list_of_dictionary(df):
     cdef list dict_array = []
     cdef dict row_dict
     # Get DataFrame columns
-    cdef list columns = df_pd.columns.tolist()
-    cdef int column_length = len(columns)
+    cdef list columns
+    cdef int column_length
     cdef tuple row
-    # Iterate over DataFrame rows using itertuples for better performance
-    for row in df_pd.itertuples(index=False, name=None):
-        row_dict = {columns[i]: row[i] for i in range(column_length)}
-        dict_array.append(row_dict)
+    try:
+        columns = df_pd.columns.tolist()
+        column_length = len(columns)
+        # Iterate over DataFrame rows using itertuples for better performance
+        for row in df_pd.itertuples(index=False, name=None):
+            row_dict = {columns[i]: row[i] for i in range(column_length)}
+            dict_array.append(row_dict)
 
-    return dict_array
+        return dict_array
+    except Exception as conversion_exception:
+        # Optionally, you can print or log the exception for debugging purposes
+        print(f"Conversion Exception: {conversion_exception}", flush=True)
+        return dict_array
 
 
 # @cython.boundscheck(False)
