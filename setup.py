@@ -56,9 +56,9 @@ setup(
     packages=find_packages(),
     ext_modules=cythonize(extensions),
     install_requires=[
-        'Cython>=0.29.21',
-        'numpy>=1.18.1',
-        'pandas>=1.5.2'
+        'Cython',
+        'numpy',
+        'pandas'
     ],
     classifiers=[
         'Programming Language :: Python :: 3',
