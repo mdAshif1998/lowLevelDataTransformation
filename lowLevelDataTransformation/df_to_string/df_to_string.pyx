@@ -1,3 +1,4 @@
+# cython: language_level=3
 # df_to_string.pyx
 # cython: boundscheck=False, wraparound=False, nonecheck=False, cdivision=True
 import pandas as pd

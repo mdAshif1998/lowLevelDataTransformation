@@ -1,3 +1,4 @@
+# cython: language_level=3
 # dataframe_to_cpp.pyx
 import numpy as np
 cimport numpy as np
