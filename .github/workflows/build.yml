@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies and build wheels (Windows)
       if: matrix.os == 'windows-latest'
       run: |
-        choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended --quiet --norestart"  # Install Visual C++ Build Tools
+        choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended --quiet --norestart"
         python -m pip install --upgrade pip
         pip install wheel
         pip install -r requirements.txt
@@ -37,11 +37,15 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Download wheels
+    - name: Download all wheels
       uses: actions/download-artifact@v4
       with:
-        name: wheels
         path: dist
+        pattern: wheels-*
+        merge-multiple: true
+
+    - name: Verify wheels
+      run: ls -la dist/
 
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@v1.4.2
