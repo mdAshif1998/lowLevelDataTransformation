@@ -1,5 +1,5 @@
 build/
-lowLevelDataTransformation.egg-info/
+LLDT.egg-info/
 dist/
 __pycache__/
 *.py[cod]

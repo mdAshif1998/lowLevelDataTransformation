@@ -1,0 +1,15 @@
+LICENSE.txt
+README.md
+setup.py
+C:/Base Folder/lowLevelDataTransformation/df_to_list_of_dictionary/df_to_list_of_dict.c
+C:/Base Folder/lowLevelDataTransformation/df_to_string/df_to_string.c
+C:/Base Folder/lowLevelDataTransformation/string_to_df/string_to_df.c
+lowLevelDataTransformation/__init__.py
+lowLevelDataTransformation.egg-info/PKG-INFO
+lowLevelDataTransformation.egg-info/SOURCES.txt
+lowLevelDataTransformation.egg-info/dependency_links.txt
+lowLevelDataTransformation.egg-info/requires.txt
+lowLevelDataTransformation.egg-info/top_level.txt
+lowLevelDataTransformation/df_to_list_of_dictionary/__init__.py
+lowLevelDataTransformation/df_to_string/__init__.py
+lowLevelDataTransformation/string_to_df/__init__.py

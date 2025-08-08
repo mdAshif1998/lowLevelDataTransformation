@@ -17,14 +17,14 @@ with open(os.path.join(directory_path, 'README.md'), encoding='utf-8') as f:
 
 
 ext_data = {
-    'lowLevelDataTransformation.df_to_list_of_dictionary.df_to_list_of_dict': {
-        'sources': [join(directory_path, 'lowLevelDataTransformation', 'df_to_list_of_dictionary', 'df_to_list_of_dict.pyx')],
+    'LLDT.df_to_list_of_dictionary.df_to_list_of_dict': {
+        'sources': [join(directory_path, 'LLDT', 'df_to_list_of_dictionary', 'df_to_list_of_dict.pyx')],
         'include': [np.get_include()]},
-    'lowLevelDataTransformation.df_to_string.df_to_string': {
-        'sources': [join(directory_path, 'lowLevelDataTransformation', 'df_to_string', 'df_to_string.pyx')],
+    'LLDT.df_to_string.df_to_string': {
+        'sources': [join(directory_path, 'LLDT', 'df_to_string', 'df_to_string.pyx')],
         'include': [np.get_include()]},
-    'lowLevelDataTransformation.string_to_df.string_to_df': {
-        'sources': [join(directory_path, 'lowLevelDataTransformation', 'string_to_df', 'string_to_df.pyx')],
+    'LLDT.string_to_df.string_to_df': {
+        'sources': [join(directory_path, 'LLDT', 'string_to_df', 'string_to_df.pyx')],
         'include': [np.get_include()]}
 }
 
@@ -45,7 +45,7 @@ for name, data in ext_data.items():
     extensions.append(obj)
 
 setup(
-    name='lowLevelDataTransformation',
+    name='LLDT',
     version='0.0.5',
     author='Md Ashif Ali',
     author_email='mdashifali.dml25@iiitb.net',

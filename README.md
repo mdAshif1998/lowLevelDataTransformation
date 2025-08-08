@@ -1,4 +1,4 @@
-# lowLevelDataTransformation
+# LLDT
 
 The package will change the world of data transformation by utilizing/modifying the low-level stuff.
 
@@ -15,13 +15,13 @@ Developed by Md Ashif Ali (c) 2025
 You can install the package using `pip`:
 
 ```sh
-pip install lowLevelDataTransformation
+pip install LLDT
 ```
 
 ```python
-from lowLevelDataTransformation.df_to_list_of_dictionary.df_to_list_of_dict import df_to_list_of_dictionary
-from lowLevelDataTransformation.df_to_string.df_to_string import df_to_string
-from lowLevelDataTransformation.string_to_df.string_to_df import string_to_df
+from LLDT.df_to_list_of_dictionary.df_to_list_of_dict import df_to_list_of_dictionary
+from LLDT.df_to_string.df_to_string import df_to_string
+from LLDT.string_to_df.string_to_df import string_to_df
 import pandas as pd
 
 sample_dataframe = pd.DataFrame({'col_1': [10, 12, 14], 'col_2': ['a', 'b', 'c']})
