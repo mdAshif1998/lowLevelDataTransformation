@@ -46,9 +46,9 @@ for name, data in ext_data.items():
 
 setup(
     name='lowLevelDataTransformation',
-    version='0.0.4',
-    author='BAAR Team Bravo 6',
-    author_email='ashif.ali@baar.ai',
+    version='0.0.5',
+    author='Md Ashif Ali',
+    author_email='mdashifali.dml25@iiitb.net',
     url='https://github.com/mdAshif1998/lowLevelDataTransformation/tree/master',
     description='The package will change the world of data transformation by utilizing/modifying the low-level stuff.',
     long_description=long_description,

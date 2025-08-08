@@ -2,7 +2,7 @@
 
 The package will change the world of data transformation by utilizing/modifying the low-level stuff.
 
-Developed by BAAR Team Bravo 6 (c) 2024
+Developed by Md Ashif Ali (c) 2025
 
 ## Features
 
