@@ -25,9 +25,9 @@ cdef int multiply_and_allocate(int field1, int field2) nogil:
 #     void* malloc(size_t size)
 #     void free(void* ptr)
 
-
 def df_to_list_of_dictionary(df):
-    cdef object df_pd = df  # Declare as generic object and use it directly
+    # Declare as generic object and use it directly
+    cdef object df_pd = df
     cdef int i
     # Initialize an empty list to store dictionaries
     cdef list dict_array = []
