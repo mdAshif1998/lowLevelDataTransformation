@@ -46,7 +46,7 @@ for name, data in ext_data.items():
 
 setup(
     name='LLDT',
-    version='0.0.6',
+    version='0.0.7',
     author='Md Ashif Ali',
     author_email='mdashifali.dml25@iiitb.net',
     url='https://github.com/mdAshif1998/lowLevelDataTransformation/tree/master',
